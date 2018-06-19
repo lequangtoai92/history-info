@@ -134,7 +134,7 @@ class History extends MX_Controller {
      * @param type $data
      * 
      */
-    protected function loadTemplateAnph($title, $page, $wrapperClass, $stylesheet = '', $script = array(), $data = array()) {
+    protected function loadTemplateAdmin($title, $page, $wrapperClass, $stylesheet = '', $script = array(), $data = array()) {
         $response['common_view'] = 'common_view';
         $response['title'] = $title;
         $response['wrapperClass'] = $wrapperClass;
