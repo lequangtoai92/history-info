@@ -52,7 +52,8 @@ class History extends MX_Controller {
     public function __construct() {
         parent::__construct();
         if (!$this->_checkLogin()) {
-            redirect('/login');
+            print('FFFFFFFFFFFFFFFFF');
+            // redirect('/login');
             return;
         }
         //store F_USER -> global
@@ -190,6 +191,7 @@ class History extends MX_Controller {
      * @Description: call at any module required login, check login state from session -> true | false
      */
     protected function _checkLogin() {
+        echo(json_encode($this->session->userdata()));
         $ss = $this->session->userdata(F_USER);
         return isset($ss) && !empty($ss);
     }
