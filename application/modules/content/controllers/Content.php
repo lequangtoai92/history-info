@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @author: Toailq - 19/07/2018
- * @module: Creat
+ * @author: Toailq - 15/07/2018
+ * @module: Content
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 require_once (APPPATH . "controllers/History.php");
 
-class Creat extends History {
+class Content extends History {
 
   public function __construct() {
     parent::__construct();
@@ -20,9 +20,9 @@ class Creat extends History {
   /*   * **************************************************************** */
 
   public function index() {
-        $modules = array( 'module.creat');
-        $stylesheet = 'creat';
+        $modules = array( 'module.content');
+        $stylesheet = 'content';
         $data['title'] = 'Hello world';
-        $this->loadTemplate('Tạo mới', 'creat_view', $stylesheet, $modules, $data);
+        $this->loadTemplate('Nội dung', 'content_view', $stylesheet, $modules, $data);
   }
 }

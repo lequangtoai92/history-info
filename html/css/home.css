@@ -1,0 +1,13 @@
+.row-body{
+    border-bottom: 1px solid beige; margin-top: 15px;
+}
+.serial{
+    text-align: center;
+}
+.compact{padding-left: 0px; padding-bottom: 10px;}
+.compact img{float: left; height: 100px; width: 100px; margin: 8px 10px 10px 0px;}
+.compact .span{ display: block;}
+.information .name{margin-bottom: 5px}
+.information .year{margin-bottom: 0px}
+.information .author{}
+.information .rate{}

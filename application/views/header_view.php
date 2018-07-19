@@ -1,49 +1,101 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" charset="utf-8" />
+<html>
+
+<head>
+<meta http-equiv="Content-Type" charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title><?= isset($title) ? $title : 'Facilio'; ?></title>
-      <link rel="icon" href="<?= base_url(); ?>html/images/icon.png" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/fonts/OpenSans/stylesheet.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/fonts/facilio-icon/stylesheet.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/fonts/font-awesome/css/font-awesome.min.css" />
-      
-      <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/dist/datetimepicker-master/css/jquery.datetimepicker.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap-daterangepicker/css/daterangepicker.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap-treeview/css/bootstrap-treeview.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/dist/jquery-validator/jquery-form-validator.css"  />
-      
-      <link rel="stylesheet" href="<?= base_url(); ?>html/dist/full-calendar/fullcalendar.min.css"  />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/dist/trumbowyg/trumbowyg.min.css"  />
-      
-      <link rel="stylesheet" href="<?= base_url(); ?>html/css/man-ultil.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/css/facilio.css" />
-      <link rel="stylesheet" href="<?= base_url(); ?>html/css/style.css" />
-      <?php
+    <title><?= isset($title) ? $title : 'Facilio'; ?></title>
+    <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>html/css/style.css" />
+    <?php
       if (isset($stylesheet))
         echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
-        ?>
+    ?>
+</head>
 
-  </head>
-  <body>
-    <div class="faci-loading">
-      <img src="<?= base_url(); ?>html/images/faci-loading-mini.gif">
-    </div>
-    <?= $this->load->view('main_menu'); ?>
-    <!-- Popup search -->
-    <div id="searchModal" class="search-modal">
-      <div class="search-content">
-        <div class="row-item-1">
-          <span class="btn-close faci-close" id="btn_close"></span>
-          <span class="title-input">Từ khóa</span>
-          <input class="qb-input"/>
-          <button class="qb-button">TÌM</button>
-        </div>
-      </div>
-    </div>
-    <!-- End popup search -->
-    <div id="facilio_wrapper" class="content-body <?php echo $wrapperClass ?>">
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đăng ký</a>
+                    </li>
 
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
+            <a class="navbar-brand">VIẾT TRUYỆN</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown3" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown3">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
+                            Thể loại
+                        </a> -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Truyện tình cảm</a>
+                            <a class="dropdown-item" href="#">Ngôn tình</a>
+                            <a class="dropdown-item" href="#">Truyện phưu lưu</a>
+                            <a class="dropdown-item" href="#">Truyện trinh thám</a>
+                            <a class="dropdown-item" href="#">Nhật ký</a>
+                            <a class="dropdown-item" href="#">Truyện kinh dị</a>
+                            <a class="dropdown-item" href="#">Truyện xã hội</a>
+                            <a class="dropdown-item" href="#">ký sự</a>
+                            <a class="dropdown-item" href="#">Truyện cổ tích</a>
+                            <a class="dropdown-item" href="#">Truyện thiếu nhi</a>
+                            <a class="dropdown-item" href="#">Truyện theo chủ đề</a>
+                            <a class="dropdown-item" href="#">Thể loại khác</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cổ Đại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trung đại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hiện đại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vua-chúa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Anh hùng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Điển tích</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Truyện cười</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Event</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--  End Nav  -->
+
+    
+
+    
