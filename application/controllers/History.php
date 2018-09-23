@@ -24,6 +24,7 @@ class History extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('session');
     }
 
     /*     * **************************************************************** */
@@ -54,17 +55,18 @@ class History extends MX_Controller {
      * @param type $data
      * 
      */
-    protected function loadTemplateAdmin($title, $page, $wrapperClass, $stylesheet = '', $script = array(), $data = array()) {
-        $response['common_view'] = 'common_view';
+
+    protected function loadTemplateAdmin($title, $page, $stylesheet = '', $modules = array(), $data = array(), $wrapperClass = '') {
+        $response['administrator_view'] = 'administrator_view';
         $response['title'] = $title;
-        $response['wrapperClass'] = $wrapperClass;
         if (!empty($stylesheet))
             $response['stylesheet'] = $stylesheet;
-        if (!empty($script))
-            $response['script'] = $script;
+        $response['wrapperClass'] = $wrapperClass;
+        if (!empty($modules))
+            $response['script'] = $modules;
         $response['page_view'] = $page;
         $response['data'] = $data;
-        $this->load->view('admin_view', $response);
+        $this->load->view('administrator_view', $response);
     }
 
     protected function loadTemplateUser($title, $page, $modules = array(), $data = array(), $wrapperClass = '') {

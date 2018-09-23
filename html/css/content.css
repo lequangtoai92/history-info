@@ -1,14 +1,8 @@
-.container .content-sup .header {
-    text-align: center
-}
+.content-body { margin-top: 20px; } 
+.container .content-sup .header { text-align: center}
 
-.container .content-sup .header .author {
-    text-align: right;
-}
+.container .content-sup .header .author { text-align: right; } 
 
-.container .content-sup .body .img-first {
-    text-align: center;
-    margin: 10px 0px 10px 0px
-}
+.container .content-sup .body .img-first { text-align: center; margin: 10px 0px 10px 0px}
 
-.container .content-sup .header {}
+.container .content-sup .header { } 

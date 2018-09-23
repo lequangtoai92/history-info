@@ -76,6 +76,9 @@
                         <a class="nav-link" href="#">Hiện đại</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#">Triều đại</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Vua-chúa</a>
                     </li>
                     <li class="nav-item">
